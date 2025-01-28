@@ -7,3 +7,5 @@ yes. it is.
 
 Just login and give us your school detail.\
 It won't take long.
+
+https://hakillhwa.lyj.kr

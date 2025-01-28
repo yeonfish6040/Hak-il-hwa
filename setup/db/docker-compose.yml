@@ -1,0 +1,12 @@
+services:
+  hak-il-hwa:
+    container_name: hak-il-hwa_db
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: test
+    volumes:
+      - ./data/db:/data/db
