@@ -1,15 +1,72 @@
 @font-face {
   font-family: "SUIT";
-  src : url("/fonts/SUIT-Regular.ttf"),
-    url("SUIT-Bold.ttf"),
-    url("SUIT-ExtraBold.ttf"),
-    url("SUIT-ExtraLight.ttf"),
-    url("SUIT-Heavy.ttf"),
-    url("SUIT-Light.ttf"),
-    url("SUIT-Medium.ttf"),
-    url("SUIT-Regular.ttf"),
-    url("SUIT-SemiBold.ttf"),
-    url("SUIT-Thin.ttf");
+  src: url("/fonts/SUIT-Thin.ttf") format("truetype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "SUIT";
+  src: url("/fonts/SUIT-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "SUIT";
+  src: url("/fonts/SUIT-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "SUIT";
+  src: url("/fonts/SUIT-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "SUIT";
+  src: url("/fonts/SUIT-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "SUIT";
+  src: url("/fonts/SUIT-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "SUIT";
+  src: url("/fonts/SUIT-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "SUIT";
+  src: url("/fonts/SUIT-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "SUIT";
+  src: url("/fonts/SUIT-Heavy.ttf") format("truetype");
+  font-weight: 900;
+}
+
+:root {
+  --border-color: #F3F3F3;
+}
+
+html {
+  font-family: "SUIT";
+  font-size: clamp(0.5rem, 1.5vh, 2rem);
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .noselect {
