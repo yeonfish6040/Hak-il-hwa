@@ -46,6 +46,7 @@ const scopes: string[] = [
 const app = express.default();
 
 app.use(express.json());
+app.use(express.static('static'))
 app.use(express.urlencoded({ extended: false }));
 app.use(session.default({secret: crypto.randomBytes(64).toString("hex"), resave: false, saveUninitialized: true, cookie: {}}));
 
@@ -59,6 +60,14 @@ declare module 'express-session' {
 }
 
 // TODO: state
+app.get("/", (req, res) => {
+  if (req.session.user) {
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("landing");
+})
+
 app.get("/login", (req: Request, res: Response) => {
   const oauth_url = "https://accounts.google.com/o/oauth2/v2/auth"+
       `?client_id=${process.env.GOOGLE_OAUTH_CLIENT_ID}`+

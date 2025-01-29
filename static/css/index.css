@@ -1,0 +1,66 @@
+html {
+  font-family: "SUIT";
+  font-size: clamp(0.5rem, 1.5vh, 2rem);
+
+  background-image: url("/img/bg_4.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+
+  color: #F5F5F5;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+
+  backdrop-filter: blur(5px) brightness(0.8);
+
+  > .introduce {
+    > .title {
+      font-size: 4rem;
+      font-weight: 600;
+    }
+
+    > .subtitle {
+      font-size: 2.2rem;
+    }
+  }
+
+  > .btn_container {
+    height: 4%;
+    width: 100%;
+
+    margin-top: 1.8%;
+
+    display: flex;
+    justify-content: center;
+
+    > .btn {
+      height: 100%;
+      width: 10%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: none;
+      border-radius: 24px;
+
+      color: #F5F5F5;
+      background-color: rgba(255, 255, 255, 0.2);
+
+      font-size: 0.9rem;
+
+      cursor: pointer !important;
+    }
+  }
+}

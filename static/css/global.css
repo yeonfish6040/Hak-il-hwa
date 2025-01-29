@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "SUIT";
+  src : url("/fonts/SUIT-Regular.ttf"),
+    url("SUIT-Bold.ttf"),
+    url("SUIT-ExtraBold.ttf"),
+    url("SUIT-ExtraLight.ttf"),
+    url("SUIT-Heavy.ttf"),
+    url("SUIT-Light.ttf"),
+    url("SUIT-Medium.ttf"),
+    url("SUIT-Regular.ttf"),
+    url("SUIT-SemiBold.ttf"),
+    url("SUIT-Thin.ttf");
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
