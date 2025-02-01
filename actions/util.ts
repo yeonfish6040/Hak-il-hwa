@@ -1,4 +1,4 @@
-import {ENV_List} from "../maps/constants";
+import {DashboardSidebarMenus, ENV_List} from "../maps/constants";
 
 export const ENV_Validator = () => {
   const missingList: string[] = [];
@@ -7,4 +7,13 @@ export const ENV_Validator = () => {
   });
 
   if (missingList.length > 0) throw new Error(`Environment variable missing: ${missingList.join(", ")}`);
+}
+
+export const GenerateDashboardParam = (page: string, user: any, data: any) => {
+  return {
+    page: page,
+    user: user,
+    data: data,
+    sidebarMenus: DashboardSidebarMenus,
+  }
 }

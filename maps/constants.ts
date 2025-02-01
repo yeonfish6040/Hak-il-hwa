@@ -15,3 +15,7 @@ export const ENV_List = {
   MONGODB_PASS: true,
   MONGODB_DB: true,
 }
+
+export const DashboardSidebarMenus = {
+  summary: "개요",
+}

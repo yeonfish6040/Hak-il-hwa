@@ -7,13 +7,13 @@ import * as express from "express";
 import * as session from "express-session";
 
 import { Db, MongoClient } from "mongodb";
-import { google } from "googleapis";
 import { Request, Response } from "express";
 import {AuthService} from "./actions/auth";
 import {OAuthService} from "./actions/oauth";
 import {User} from "./maps/schemas";
-import {ENV_Validator} from "./actions/util";
+import {ENV_Validator, GenerateDashboardParam} from "./actions/util";
 import {ApiService} from "./actions/api";
+import {DashboardSidebarMenus} from "./maps/constants";
 
 // Before init
 ENV_Validator();
@@ -68,6 +68,30 @@ app.get("/", (req, res) => {
   res.render("landing");
 })
 
+app.get("/dashboard/:page?", (req, res) => {
+  if (!req.session.user) {
+    res.redirect("/");
+    return;
+  }
+
+  let page = "";
+  if (!req.params.page) {
+    page = "summary";
+  }else {
+    if (Object.keys(DashboardSidebarMenus).indexOf(req.params.page) !== -1) {
+      page = req.params.page;
+    }else {
+      res.redirect("/dashboard");
+      return;
+    }
+  }
+
+  res.render(
+      "dashboard",
+      GenerateDashboardParam(page, req.session.user, "summary"),
+  );
+});
+
 app.get("/login", (req: Request, res: Response) => {
   const oauth_url = "https://accounts.google.com/o/oauth2/v2/auth"+
       `?client_id=${process.env.GOOGLE_OAUTH_CLIENT_ID}`+
@@ -113,6 +137,7 @@ app.get("/auth", async (req: Request, res: Response) => {
 
 app.get("/logout", (req: Request, res: Response) => {
   req.session.user = undefined;
+  res.redirect("/");
 });
 
 app.get("/test", async (req: Request, res: Response) => {
@@ -122,6 +147,7 @@ app.get("/test", async (req: Request, res: Response) => {
     return;
   }
 
+  await oauthSercice.refreshToken(user._id.toString());
   await apiService.insertEventToCalendar(user._id.toString(), "2025-01-28", "asdf", "asdf");
 });
 

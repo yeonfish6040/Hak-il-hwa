@@ -53,7 +53,8 @@
 }
 
 :root {
-  --border-color: #F3F3F3;
+  --border-color: #f3f3f3;
+  --text-color-menu-title: #202124;
 }
 
 html {

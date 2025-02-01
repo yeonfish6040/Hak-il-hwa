@@ -1,0 +1,5 @@
+<div class="sidebar">
+  <% Object.entries(sidebarMenus).forEach(([k, v]) => { %>
+    <a href="/dashboard/<%= k %>"><%= v %></a>
+  <% }); %>
+</div>

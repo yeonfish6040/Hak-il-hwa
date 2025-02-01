@@ -11,8 +11,6 @@ export class AuthService {
   }
 
   async login(ticket: LoginTicket): Promise<User> {
-    console.log("LOGIN", ticket.getPayload());
-
     const payload = ticket.getPayload();
     if (!payload) throw new Error("Cannot parse LoginTicket");
     const sub = payload.sub || "";
