@@ -1,5 +1,8 @@
 <div class="sidebar">
   <% Object.entries(sidebarMenus).forEach(([k, v]) => { %>
-    <a href="/dashboard/<%= k %>"><%= v %></a>
+    <a class="sidebar_menu-item <%= page === k ? "selected" : "" %>" href="/dashboard/<%= k %>">
+        <img src="/img/dashboard/<%= k %><%= page === k ? "_selected" : "" %>.svg" alt="<%= v %>">
+        <span><%= v %></span>
+    </a>
   <% }); %>
 </div>

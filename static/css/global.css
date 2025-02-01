@@ -55,6 +55,8 @@
 :root {
   --border-color: #f3f3f3;
   --text-color-menu-title: #202124;
+  --text-color-menu-item: #666666;
+  --text-color-menu-item-selected: #174ea6;
 }
 
 html {

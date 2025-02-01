@@ -15,7 +15,7 @@
 <body>
   <div class="container">
     <%- include(`./dashboard/topbar.ejs`, {user: user}) %>
-    <div class="column">
+    <div class="row">
       <%- include(`./dashboard/sidebar.ejs`, {sidebarMenus: sidebarMenus, page: page}) %>
       <div class="content">
         <%- include(`./dashboard/page/${page}.ejs`, {data: data}) %>

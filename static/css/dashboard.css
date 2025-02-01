@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  > .topbar1 {
+  > .topbar {
     height: 4.6%;
     width: 100%;
 
@@ -40,19 +40,57 @@
     }
   }
 
-  > .column {
+  > .row {
     height: 95%;
+
+    display: flex;
+    flex-direction: row;
 
     > .sidebar {
       height: 100%;
-      width: 12%;
+      width: 13%;
 
       border-right: 2px solid var(--border-color);
 
       display: flex;
       flex-direction: column;
 
-      >
+      > .sidebar_menu-item {
+        height: 4%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        font-size: 1rem;
+        text-decoration: none;
+
+        border-bottom: 2px solid var(--border-color);
+
+        > img {
+          margin-left: 6%;
+          height: 50%;
+        }
+
+        > span {
+          margin-left: 2%;
+
+          color: var(--text-color-menu-item);
+        }
+      }
+
+      > .sidebar_menu-item.selected {
+        background-color: var(--border-color);
+
+        > span {
+          color: var(--text-color-menu-item-selected);
+        }
+      }
+    }
+
+    > .content {
+      width: 87%;
     }
   }
 }

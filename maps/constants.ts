@@ -18,4 +18,6 @@ export const ENV_List = {
 
 export const DashboardSidebarMenus = {
   summary: "개요",
+  add: "추가",
+  // pay: "결제",
 }
