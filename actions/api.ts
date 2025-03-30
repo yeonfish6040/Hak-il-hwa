@@ -15,7 +15,7 @@ export class ApiService {
     this.client = new axios.Axios();
   }
 
-  /*
+  /**
 {
     ATPT_OFCDC_SC_CODE: 'J10',
     ATPT_OFCDC_SC_NM: '경기도교육청',
@@ -50,7 +50,7 @@ export class ApiService {
     return data.data.schoolInfo[1].row;
   }
 
-  /*
+  /**
   {
     ATPT_OFCDC_SC_CODE: 'J10',
     SD_SCHUL_CODE: '7530560',
